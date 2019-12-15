@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CIAO experience</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dialog_title">Action not allow</string>
+    <string name="dialog_text">Please login to use this function</string>
+    <string name="view_book">View &amp; Book</string>
+</resources>

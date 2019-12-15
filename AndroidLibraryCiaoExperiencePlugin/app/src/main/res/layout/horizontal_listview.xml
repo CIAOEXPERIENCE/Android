@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dkGrey">
+
+    <RelativeLayout
+        android:layout_marginBottom="5dp"
+        android:layout_width="162dp"
+        android:layout_height="28dp">
+
+        <ImageView
+            android:id="@+id/horCatLabel"
+            android:scaleType="fitXY"
+            android:src="@drawable/label_scale_left"
+            android:layout_width="162dp"
+            android:layout_height="28dp" />
+
+        <com.aCrmNet.CIAOexperience.CustomTextView
+            android:text="title category"
+            android:layout_height="wrap_content"
+            android:id="@+id/hor_cat_text"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textColor="@android:color/white"
+            android:layout_width="105dp"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="5dp"
+            android:textSize="14sp"
+            android:layout_toStartOf="@+id/hor_cat_icon" />
+
+        <ImageView
+            android:layout_height="match_parent"
+            android:id="@+id/hor_cat_icon"
+            android:src="@drawable/clubs"
+            android:layout_width="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
+
+
+    <com.aCrmNet.CIAOexperience.CustomHorizontalScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+
+        android:id="@+id/horScroll"
+        android:layout_height="wrap_content"
+        android:background="@color/dkGrey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/linear">
+
+        </LinearLayout>
+
+
+    </com.aCrmNet.CIAOexperience.CustomHorizontalScrollView>
+
+</LinearLayout>

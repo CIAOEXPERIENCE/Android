@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity" >
+    <Button
+        android:id="@+id/downloadWithCertificate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add Certificate"
+        android:textAllCaps="false"  />
+    <Button
+        android:id="@+id/downloadJson"
+        android:layout_below="@+id/downloadWithCertificate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get Dashboard"
+        android:textAllCaps="false" />
+    <Button
+        android:id="@+id/downloadUrlDownload"
+        android:layout_below="@+id/downloadJson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get Image"
+        android:textAllCaps="false" />
+    <ImageView
+        android:id="@+id/downloadedImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp" />
+
+    <TextView
+        android:id="@+id/downloadMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="22sp"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

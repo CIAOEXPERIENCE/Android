@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+
+group "com.adwiv.public"
+version '1.2.3'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    sourceSets {
+        main {
+            //Path to your source code
+            java {
+                srcDir 'src/main/java'
+            }
+        }
+    }
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 25
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+apply from: 'fat-aar.gradle'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile files('libs/classes.jar')
+    compile files('libs/picasso-2.5.2.jar')
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:support-v4:25.1.0'
+    //embedded 'com.android.support:support-v4:25.1.0'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/glide-3.7.0.jar')
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    compile files('libs/beacon.jar')
+}
+
+task deleteOldJar(type: Delete) {
+    delete 'release/AndroidPlugin.jar'
+}
+
+//task to export contents as jar
+task exportJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('release/')
+    include('classes.jar')
+    ///Rename the jar
+    rename('classes.jar', 'AndroidPlugin2.jar')
+
+}
+
+exportJar.dependsOn(deleteOldJar, build)
